@@ -1,0 +1,334 @@
+.add-to-collections-box {
+  position: relative;
+  width: 640px;
+  height: 448px;
+  margin-top: 0 !important;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(25px);
+  /* Note: backdrop-filter has minimal browser support */
+  padding-top: 24px;
+  border-radius: 20px;
+  & > .el-dialog__header {
+    padding: 0;
+  }
+  & > .el-dialog__body {
+    padding-top: 8px;
+    padding-left: 32px;
+    padding-right: 10px;
+    padding-bottom: 24px;
+  }
+  .collectins-tip {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 16px;
+  }
+  .add-collections-box-title {
+    display: flex;
+
+    .close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      text-align: center;
+      &:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+      cursor: pointer;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 16px;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      img {
+        width: 8.6px;
+        height: 8.6px;
+      }
+    }
+    .name {
+      color: #333333;
+      font-size: 18px;
+      font-weight: bold;
+      flex: 1;
+      text-align: center;
+    }
+  }
+  .collectins-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    // padding-right: 10px;
+    height: 272px;
+    overflow: auto;
+    // justify-content: space-between;
+    .collection-single {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      width: 280px;
+      &:nth-child(even) {
+        margin: 16px 10px 0px 16px;
+      }
+      &:nth-child(-n + 2) {
+        margin-top: 0;
+      }
+      margin-top: 16px;
+      height: 80px;
+      background: #ffffff;
+      border-radius: 10px;
+      align-items: center;
+      .collection-single-shop-img {
+        margin-left: 10px;
+        margin-right: 8px;
+        font-size: 0;
+        img {
+          width: 40px;
+          height: 60px;
+          border-radius: 4px;
+          margin-right: 5px;
+          background: #c4c4c4;
+          object-fit: cover;
+          // &:last-child {
+          // margin: 0;
+          // }
+        }
+      }
+      .add-img {
+        width: 130px;
+        height: 60px;
+        background: #c4c4c4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+      }
+      .add-img img {
+        width: 36px;
+        height: 36px;
+      }
+      &.add-collection {
+        .collection-single-name {
+          padding-top: 21px;
+        }
+      }
+      .collection-single-name {
+        padding-top: 8px;
+        box-sizing: border-box;
+        flex: 1;
+        height: 100%;
+        padding-right: 7px;
+        .collection-name {
+          font-weight: 600;
+          max-width: 120px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-size: 14px;
+          color: #333333;
+          margin-bottom: 5px;
+        }
+        .collection-number {
+          display: flex;
+          justify-content: space-between;
+          .amount {
+            font-size: 12px;
+          }
+          .input-box {
+            flex: 1;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            justify-content: flex-end;
+            z-index: 10;
+            display: flex;
+            input[type="checkbox"] {
+              width: 20px;
+              height: 20px;
+              opacity: 0;
+            }
+
+            label {
+              cursor: pointer;
+              position: absolute;
+              box-sizing: border-box;
+              // width: 20px;
+              // height: 20px;
+              // border-radius: 50%;
+              // border: 1px solid #999;
+            }
+
+            /*设置选中的input的样式*/
+            /* + 是兄弟选择器,获取选中后的label元素*/
+            input:checked + label .collect {
+              opacity: 1;
+            }
+            input:checked + label {
+              border: 0;
+            }
+            input:not(input:checked) + label .circle {
+              display: block;
+              opacity: 1;
+            }
+            input:checked + label .circle {
+              display: none;
+            }
+            .collect {
+              opacity: 0;
+              width: 24px;
+              height: 24px;
+            }
+            // input:checked + label::after {
+            //   position: absolute;
+            //   content: "";
+            //   width: 4px;
+            //   height: 8px;
+            //   top: 3px;
+            //   left: 6px;
+            //   border: 2px solid #fff;
+            //   border-top: none;
+            //   border-left: none;
+            //   transform: rotate(45deg);
+            // }
+          }
+        }
+        .add-title {
+          font-weight: bold;
+          font-size: 18px;
+          color: #333333;
+        }
+      }
+    }
+  }
+  .collectins-bottom {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    .affirm {
+      color: #fff;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 40px;
+      text-align: center;
+      background: #333333;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      height: 40px;
+      width: 240px;
+      border-radius: 30px;
+    }
+  }
+}
+.careted-collections-box {
+  position: relative;
+  width: 300px;
+  height: 220px;
+  text-align: center;
+  margin-top: 0 !important;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(25px);
+  /* Note: backdrop-filter has minimal browser support */
+  padding-top: 16px;
+  border-radius: 20px;
+  & > .el-dialog__header {
+    padding: 0;
+  }
+  & > .el-dialog__body {
+    margin-top: 24px;
+    padding-top: 0px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    .el-input__inner {
+      border-radius: 10px !important;
+    }
+  }
+  .el-form-item {
+    margin-bottom: 0;
+    .error-info {
+      margin-top: 9px;
+      position: absolute;
+      color: #f84240;
+      word-break: break-word;
+      line-height: 1;
+      .collection-error {
+        width: 10px;
+        height: 10px;
+      }
+      p {
+        font-size: 12px;
+        // transform: scale(1,.8);
+      }
+    }
+  }
+  .add-collections-box-title {
+    display: flex;
+    .close {
+      width: 24px;
+      text-align: center;
+      cursor: pointer;
+      height: 24px;
+      &.close:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 16px;
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      img {
+        width: 8.6px;
+        height: 8.6px;
+      }
+    }
+    .name {
+      color: #333333;
+      font-size: 18px;
+      font-weight: bold;
+      flex: 1;
+      text-align: center;
+    }
+  }
+  .add-collection {
+    & > .el-input--small {
+      &.no-content {
+        input {
+          color: #979797;
+          font-weight: 500;
+          background: #fff;
+          // background-color: rgba(51, 51, 51, 0.1);
+        }
+      }
+      input {
+        border-radius: 10px;
+        height: 48px;
+        font-size: 18px;
+        line-height: 48px;
+        // caret-color: red;
+      }
+      input:focus {
+        border-color: initial;
+      }
+    }
+  }
+
+  .created-btn {
+    margin-top: 48px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    background: #333333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    &.error {
+      background: #333333;
+      opacity: 0.1 !important;
+    }
+  }
+}

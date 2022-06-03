@@ -1,0 +1,59 @@
+.card-box {
+  .title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #333333;
+    margin-bottom: 8px;
+  }
+  .stripe-input {
+    height: 56px;
+    background: rgba(51, 51, 51, 0.1);
+    &.no-empty {
+      background: #fff;
+    }
+    border-radius: 10px;
+    flex: 1 1 0%;
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
+    justify-content: center;
+    &.is-focus {
+      filter: drop-shadow(0px 0px 20px rgba(51, 51, 51, 0.15));
+    }
+  }
+  .expiry-and-cvc {
+    margin: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    .card-expiry-box {
+      flex: 1;
+    }
+    .card-cvc-box {
+      flex: 1;
+    }
+  }
+  .card-postal-box {
+    width: 50%;
+  }
+}
+.crad-save {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  .save-buton {
+    cursor: pointer;
+    width: 240px;
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    background: rgba(51, 51, 51, 0.1);
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    &.nodisabled {
+      background: #333333;
+    }
+  }
+}

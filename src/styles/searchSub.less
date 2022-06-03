@@ -1,0 +1,57 @@
+.header-search-sub {
+  padding-left: 16px;
+  margin-left: auto;
+  width: 254px;
+  .el-input__prefix {
+    left: 0;
+    margin-left: 12px;
+    i {
+      color: #000000;
+      font-size: 18px;
+    }
+  }
+  .el-input__suffix {
+    right: 12px;
+    i {
+      font-size: 24px;
+      color: #000000;
+    }
+    .el-input__suffix-inner {
+      border-color: none;
+      .el-icon-circle-close:before {
+        content: "\e79d" !important;
+        font-size: 24px;
+      }
+    }
+  }
+  input {
+    // background: rgba(0, 0, 0, 0.1);
+    background: #eeeeee;
+    border-radius: 20px;
+    height: 40px;
+    border-color: #eeeeee;
+    font-weight: normal;
+    font-size: 16px;
+    padding-left: 46px !important;
+  }
+  input::-webkit-input-placeholder { /* WebKit browsers */ 
+    color: #979797;
+  } 
+  input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+    color: #979797;
+  } 
+  input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+    color: #979797;
+  } 
+  input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+    color: #979797;
+  }
+  input:focus {
+    border-color: #eeeeee !important;
+    background: #ffffff !important;
+    // box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.15) !important;
+  }
+  input:hover {
+    border-color: #eeeeee !important;
+  }
+}
